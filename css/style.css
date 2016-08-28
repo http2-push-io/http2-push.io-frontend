@@ -1,4 +1,4 @@
-body {
+.site-index body {
     background-color: #CF6766;
     height: 100%;
     margin: 0;
@@ -6,25 +6,25 @@ body {
     font-family: Helvetica, Arial, sans-serif;
     font-weight: 300;
 }
-.wrapper{
+.site-index .wrapper{
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     flex-direction: column;
 }
-.wrapper .text, .wrapper .form, .wrapper #result{
+.site-index .wrapper .text, .site-index .wrapper .form, .site-index .wrapper #result{
     order: 1;
 }
 
-.form input[type=text]{
+.site-index .form input[type=text]{
     padding: 11px 10px 12px 10px;
     font-size: 22px;
     width: 400px;
     color: #535454;
     border: 0;
 }
-.form .button{
+.site-index .form .button{
     background: #30415d;
     border: 0;
     font-size: 22px;
@@ -64,7 +64,7 @@ body {
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-#result{
+.site-index #result{
     overflow-y: scroll;
     text-align: left;
     width: 521px;
@@ -76,78 +76,34 @@ body {
     -webkit-transition: all 1s; /* Safari */
     transition: all 1s;
 }
-#result table{
+.site-index #result table{
     width: 100%;
     background-color: #8eaebd;
     padding: 5px;
     border-collapse: collapse;
 }
-#result table tr{
+.site-index #result table tr{
     border-bottom: 1px solid #CF6766;
 }
-#result table tr:last-child{
+.site-index #result table tr:last-child{
     border: 0;
 }
-#result table td{
+.site-index #result table td{
     padding: 5px 0 5px 15px;
 }
-footer{
+.site-index footer{
     position: absolute;
     bottom: 0;
     width: 100%;
     text-align: center;
 }
-footer p{
+.site-index footer p{
     font-size: 15px;
     color: lightgray;
 }
-footer p a{
+.site-index footer p a{
     color: lightgray;
 }
-
-/* FAQ */
-.back-button{
-    display: inline-block;
-    float: left;
-    color: white;
-    border-radius: 6px;
-    padding: 10px 0 10px 19px;
-    margin: 8px 0 0 8px;
-    text-align: center;
-    transition: background-color .2s;
-    cursor: pointer;
-}
-ul{
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-.boxes{
-    max-width: 845px;
-}
-.box{
-    width: 400px;
-    max-height: 200px;
-    text-align: left;
-    display: inline-block;
-    background: #30415d;
-    padding: 10px;
-    margin-bottom: 5px;
-}
-.box h3:before{
-    content: "- ";
-}
-.box h3{
-    color: white;
-    font-weight: 300;
-    padding: 0;
-    margin: 0;
-}
-.box p{
-    text-align: left;
-    font-size: 18px;
-}
-
 
 @media (max-width: 600px) {
     .menu {
