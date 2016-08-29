@@ -8,6 +8,16 @@ function search() {
         var pushes = JSON.parse(xhttp.responseText);
         document.getElementById("result").innerHTML = '<table></table>';
         var table = document.getElementsByTagName("table")[0];
+
+        var header = table.createTHead();
+        var hRow = header.insertRow(0);
+        var hCell1 = hRow.insertCell(0);
+        var hCell2 = hRow.insertCell(1);
+        var hCell3 = hRow.insertCell(2);
+        cell1.innerHTML = "Path";
+        cell2.innerHTML = "Hash";
+        cell3.innerHTML = "Status";
+
         pushes.forEach(function(entry) {
             var row = table.insertRow();
 
