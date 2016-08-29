@@ -2,7 +2,7 @@ function search() {
   document.getElementById("result").style.maxHeight = '0';
   var start = new Date().getTime();
   var xhttp = new XMLHttpRequest();
-  var button = document.getElementsByClass("button")[0];
+  var button = document.getElementsByClassName("button")[0];
   button.getElementsByTagName("span").style.display = "none";
   addClass(button, "btn-loading");
   xhttp.onreadystatechange = function() {
