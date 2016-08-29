@@ -82,6 +82,7 @@ p {
     width: 400px;
     color: #535454;
     border: 0;
+    height: 24px;
 }
 .site-index .form .button {
     background: #30415d;
