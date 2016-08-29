@@ -6,31 +6,36 @@ function search() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       setTimeout(function() {
         var pushes = JSON.parse(xhttp.responseText);
-        document.getElementById("result").innerHTML = '<table></table>';
-        var table = document.getElementsByTagName("table")[0];
 
-        var header = table.createTHead();
-        var hRow = header.insertRow(0);
-        var hCell1 = hRow.insertCell(0);
-        var hCell2 = hRow.insertCell(1);
-        var hCell3 = hRow.insertCell(2);
-        hCell1.innerHTML = "Path";
-        hCell2.innerHTML = "Hash";
-        hCell3.innerHTML = "Status";
+        if(pushes.error != null) {
+          console.log("Error!")
+        } else {
+          document.getElementById("result").innerHTML = '<table></table>';
+          var table = document.getElementsByTagName("table")[0];
 
-        pushes.forEach(function(entry) {
-            var row = table.insertRow();
+          var header = table.createTHead();
+          var hRow = header.insertRow(0);
+          var hCell1 = hRow.insertCell(0);
+          var hCell2 = hRow.insertCell(1);
+          var hCell3 = hRow.insertCell(2);
+          hCell1.innerHTML = "Path";
+          hCell2.innerHTML = "Hash";
+          hCell3.innerHTML = "Status";
 
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
+          pushes.forEach(function(entry) {
+              var row = table.insertRow();
 
-            cell1.innerHTML = entry.url;
-            cell2.innerHTML = entry.etag;
-            cell3.innerHTML = entry.step;
-        });
+              var cell1 = row.insertCell(0);
+              var cell2 = row.insertCell(1);
+              var cell3 = row.insertCell(2);
 
-        document.getElementById("result").style.maxHeight = '400px';
+              cell1.innerHTML = entry.url;
+              cell2.innerHTML = entry.etag;
+              cell3.innerHTML = entry.step;
+          });
+
+          document.getElementById("result").style.maxHeight = '400px';
+        }
       }, 1000 - (new Date().getTime() - start));
     };
 
