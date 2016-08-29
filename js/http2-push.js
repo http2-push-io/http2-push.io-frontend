@@ -3,7 +3,8 @@ function search() {
   var start = new Date().getTime();
   var xhttp = new XMLHttpRequest();
   var button = document.getElementsByClassName("button")[0];
-  addClass(button.getElementsByTagName("span")[0], "btn-loading");
+  button.getElementsByTagName("span")[0].style.display = "none";
+  button.getElementsByTagName("div")[0].style.display = "inline-block";
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       setTimeout(function() {
@@ -39,7 +40,8 @@ function search() {
 
           document.getElementById("result").style.maxHeight = '400px';
 
-          removeClass(button.getElementsByTagName("span")[0], "btn-loading");
+          button.getElementsByTagName("span")[0].style.display = "inline";
+          button.getElementsByTagName("div")[0].style.display = "none";
         }
       }, 1000 - (new Date().getTime() - start));
     };
