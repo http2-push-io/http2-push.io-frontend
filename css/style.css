@@ -147,12 +147,12 @@ p {
     border-bottom: 2px solid #CF6766;
 }
 .site-index #result table thead tr td {
-    font-weight: bold;
+    font-weight: 400;
 }
 .site-index #result table tr {
     border-bottom: 1px solid #CF6766;
 }
-.site-index #result table tr:last-child {
+.site-index #result table tbody tr:last-child {
     border: 0;
 }
 .site-index #result table td {
