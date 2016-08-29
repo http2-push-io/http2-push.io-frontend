@@ -21,6 +21,7 @@ function search() {
           hCell1.innerHTML = "Path";
           hCell2.innerHTML = "Hash";
           hCell3.innerHTML = "Status";
+          var body = table.createTBody();
 
           pushes.forEach(function(entry) {
               var row = table.insertRow();
