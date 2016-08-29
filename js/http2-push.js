@@ -24,7 +24,7 @@ function search() {
           var body = table.createTBody();
 
           pushes.forEach(function(entry) {
-              var row = table.insertRow();
+              var row = body.insertRow();
 
               var cell1 = row.insertCell(0);
               var cell2 = row.insertCell(1);
