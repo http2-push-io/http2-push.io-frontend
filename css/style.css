@@ -90,8 +90,8 @@ p {
     color: white;
     line-height: 47px;
     height: 47px;
-    margin-left: -4px;
-    width: 80px;
+    margin-left: -4.1px;
+    width: 100px;
     font-weight: 300;
     cursor: pointer;
     display: inline-block;
@@ -126,7 +126,7 @@ p {
 .site-index #result {
     overflow-y: scroll;
     text-align: left;
-    width: 524px;
+    width: 520px;
     color: white;
     z-index: 500;
     background-color: #8eaebd;
