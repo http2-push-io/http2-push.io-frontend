@@ -2,6 +2,7 @@ function search() {
   var button = document.getElementsByClassName("button")[0];
   if (button.getElementsByTagName("span")[0].style.display !== "none") {
     document.getElementById("result").style.maxHeight = '0';
+    document.getElementsByClassName("error")[0].style.display = "none";;
     var start = new Date().getTime();
     var xhttp = new XMLHttpRequest();
     button.getElementsByTagName("span")[0].style.display = "none";
@@ -12,7 +13,10 @@ function search() {
           var pushes = JSON.parse(xhttp.responseText);
 
           if(pushes.error != null) {
-            console.log(pushes.error);
+            var errorDiv = document.getElementsByClassName("error")[0];
+            errorDiv.innerHTML = "Error: " + pushes.error;
+            errorDiv.style.display = "inline-block";
+
           } else {
             document.getElementById("result").innerHTML = '<table></table>';
             var table = document.getElementsByTagName("table")[0];
