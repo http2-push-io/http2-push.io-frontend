@@ -6,7 +6,7 @@ function search() {
     var start = new Date().getTime();
     var xhttp = new XMLHttpRequest();
     button.getElementsByTagName("span")[0].style.display = "none";
-    button.getElementsByTagName("div")[0].style.display = "block";
+    button.getElementsByTagName("div")[0].style.display = "inline-block";
     xhttp.onreadystatechange = function() {
       if (xhttp.readyState == 4 && xhttp.status == 200) {
         setTimeout(function() {
@@ -15,7 +15,7 @@ function search() {
           if(pushes.error != null) {
             var errorDiv = document.getElementsByClassName("error")[0];
             errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: " + pushes.error;
-            errorDiv.style.display = "inline-block";
+            errorDiv.style.display = "block";
             button.getElementsByTagName("span")[0].style.display = "inline";
             button.getElementsByTagName("div")[0].style.display = "none";
           } else {
