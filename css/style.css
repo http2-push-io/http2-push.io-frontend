@@ -77,7 +77,7 @@ p {
     order: 1;
 }
 .site-index .form input[type=text] {
-    padding: 11px 10px 12px 10px;
+    padding: 11px 10px 11px 10px;
     font-size: 22px;
     width: 400px;
     color: #535454;
@@ -88,8 +88,8 @@ p {
     border: 0;
     font-size: 22px;
     color: white;
-    padding: 12px;
-    height: 25px;
+    line-height: 47px;
+    height: 47px;
     margin-left: -4px;
     width: 80px;
     font-weight: 300;
@@ -126,7 +126,7 @@ p {
 .site-index #result {
     overflow-y: scroll;
     text-align: left;
-    width: 521px;
+    width: 524px;
     color: white;
     z-index: 500;
     background-color: #8eaebd;
