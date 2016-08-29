@@ -8,7 +8,7 @@ function search() {
         var pushes = JSON.parse(xhttp.responseText);
 
         if(pushes.error != null) {
-          console.log("Error!")
+          console.log(pushes.error);
         } else {
           document.getElementById("result").innerHTML = '<table></table>';
           var table = document.getElementsByTagName("table")[0];
