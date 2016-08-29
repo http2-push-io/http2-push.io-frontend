@@ -217,9 +217,8 @@ p {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: center;
+    justify-content: center;
+    align-content: center;
     width: 80%;
     margin: 0 auto;
 }
