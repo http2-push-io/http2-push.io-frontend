@@ -24,7 +24,14 @@
 
             <div class="form">
                 <input id="website" type="text" name="url" placeholder="https://http2-push.io/">
-                <div class="button" onclick="search()"><span>Test!</span><div style="display: none;" class="btn-loading">Loading...</div></div>
+                <div class="button" onclick="search()">
+                  <span>Test!</span>
+                    <div style="display: none;" class="spinner">
+                    <div class="bounce1"></div>
+                    <div class="bounce2"></div>
+                    <div class="bounce3"></div>
+                  </div>
+                </div>
             </div>
 
             <div id="result"></div>
