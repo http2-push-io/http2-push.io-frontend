@@ -6,7 +6,7 @@ function search() {
     var start = new Date().getTime();
     var xhttp = new XMLHttpRequest();
     button.getElementsByTagName("span")[0].style.display = "none";
-    button.getElementsByTagName("div")[0].style.display = "inline-block";
+    button.getElementsByTagName("div")[0].style.display = "block";
     xhttp.onreadystatechange = function() {
       if (xhttp.readyState == 4 && xhttp.status == 200) {
         setTimeout(function() {
