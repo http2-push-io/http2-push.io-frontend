@@ -14,9 +14,10 @@ function search() {
 
           if(pushes.error != null) {
             var errorDiv = document.getElementsByClassName("error")[0];
-            errorDiv.innerHTML = "Error: " + pushes.error;
+            errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: " + pushes.error;
             errorDiv.style.display = "inline-block";
-
+            button.getElementsByTagName("span")[0].style.display = "inline";
+            button.getElementsByTagName("div")[0].style.display = "none";
           } else {
             document.getElementById("result").innerHTML = '<table></table>';
             var table = document.getElementsByTagName("table")[0];
