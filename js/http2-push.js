@@ -14,9 +14,9 @@ function search() {
         var hCell1 = hRow.insertCell(0);
         var hCell2 = hRow.insertCell(1);
         var hCell3 = hRow.insertCell(2);
-        cell1.innerHTML = "Path";
-        cell2.innerHTML = "Hash";
-        cell3.innerHTML = "Status";
+        hCell1.innerHTML = "Path";
+        hCell2.innerHTML = "Hash";
+        hCell3.innerHTML = "Status";
 
         pushes.forEach(function(entry) {
             var row = table.insertRow();
