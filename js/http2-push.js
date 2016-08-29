@@ -2,6 +2,9 @@ function search() {
   document.getElementById("result").style.maxHeight = '0';
   var start = new Date().getTime();
   var xhttp = new XMLHttpRequest();
+  var button = document.getElementsClass("button")[0];
+  button.getElementsByTagName("span").style.display = "none";
+  addClass(button, "btn-loading");
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       setTimeout(function() {
@@ -36,6 +39,9 @@ function search() {
           });
 
           document.getElementById("result").style.maxHeight = '400px';
+
+          button.getElementsByTagName("span").style.display = "inline";
+          removeClass(button, "btn-loading");
         }
       }, 1000 - (new Date().getTime() - start));
     };
@@ -44,4 +50,26 @@ function search() {
 
   xhttp.open("GET", "https://api.http2-push.io/?url=" + document.getElementById('website').value, true);
   xhttp.send();
+}
+
+function hasClass(el, className) {
+  if (el.classList)
+    return el.classList.contains(className)
+  else
+    return !!el.className.match(new RegExp('(\\s|^)' + className + '(\\s|$)'))
+}
+
+function addClass(el, className) {
+  if (el.classList)
+    el.classList.add(className)
+  else if (!hasClass(el, className)) el.className += " " + className
+}
+
+function removeClass(el, className) {
+  if (el.classList)
+    el.classList.remove(className)
+  else if (hasClass(el, className)) {
+    var reg = new RegExp('(\\s|^)' + className + '(\\s|$)')
+    el.className=el.className.replace(reg, ' ')
+  }
 }
