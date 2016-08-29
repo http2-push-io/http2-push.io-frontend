@@ -143,6 +143,12 @@ p {
     padding: 5px;
     border-collapse: collapse;
 }
+.site-index #result table thead tr {
+    border-bottom: 2px solid #CF6766;
+}
+.site-index #result table thead tr td {
+    font-weight: bold;
+}
 .site-index #result table tr {
     border-bottom: 1px solid #CF6766;
 }
