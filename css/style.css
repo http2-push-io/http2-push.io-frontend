@@ -97,6 +97,7 @@ p {
     cursor: pointer;
     display: inline-block;
     text-align: center;
+    margin-top: 1px;
 }
 ::-webkit-input-placeholder {
     color: #B5B5B5;
