@@ -197,12 +197,17 @@ p {
     background-color: #8eaebd;
     padding: 5px;
     border-collapse: collapse;
+    table-layout: fixed;
+}
+.site-index #result table thead{
+    
 }
 .site-index #result table thead tr {
     border-bottom: 2px solid #CF6766;
 }
 .site-index #result table thead tr td {
     font-weight: 400;
+    padding: 7px 0 0 10px !important;
 }
 .site-index #result table tr {
     border-bottom: 1px solid #CF6766;
@@ -210,6 +215,20 @@ p {
 .site-index #result table tbody tr:last-child {
     border: 0;
 }
+.site-index #result table tr td:first-child{
+    width: 60%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px 0 10px;
+}
+.site-index #result table tr td:nth-child(2){
+    width: 20%;
+}
+.site-index #result table tr td:nth-child(3){
+    width: 10%;
+}
+.site-index #result table tr:
 .site-index #result table td {
     padding: 5px 0 5px 15px;
 }
