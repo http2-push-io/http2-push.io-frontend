@@ -1,7 +1,6 @@
 function search() {
   var button = document.getElementsByClassName("button")[0];
   if (document.getElementById('website').value.substr(0, 8) !== "https://") {
-    console.log("werks");
     if (document.getElementById('website').value.substr(0, 7) !== "http://") {
       var errorDiv = document.getElementsByClassName("error")[0];
       errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: URL is not using the HTTPS protocol";
@@ -10,6 +9,7 @@ function search() {
       button.getElementsByTagName("div")[0].style.display = "none";
     }
     else {
+      console.log("werks");
       document.getElementById('website').value = "https://" + document.getElementById('website').value;
       search();
     }
