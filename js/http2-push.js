@@ -7,8 +7,10 @@ function search() {
       errorDiv.style.display = "block";
       button.getElementsByTagName("span")[0].style.display = "inline";
       button.getElementsByTagName("div")[0].style.display = "none";
-    }
-    else {
+    } else if (document.getElementById('website').value == "") {
+      document.getElementById('website').value = "https://http2-push.io/";
+      search();
+    } else {
       console.log("werks");
       document.getElementById('website').value = "https://" + document.getElementById('website').value;
       search();
