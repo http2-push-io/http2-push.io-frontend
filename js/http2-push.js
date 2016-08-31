@@ -1,5 +1,18 @@
 function search() {
   var button = document.getElementsByClassName("button")[0];
+  if (document.getElementById('website').value.substr(0, 8) !== "https://") {
+    if (document.getElementById('website').value.substr(0, 7) !== "http://") {
+      var errorDiv = document.getElementsByClassName("error")[0];
+      errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: URL is not using the HTTPS protocol";
+      errorDiv.style.display = "block";
+      button.getElementsByTagName("span")[0].style.display = "inline";
+      button.getElementsByTagName("div")[0].style.display = "none";
+    }
+    else {
+      document.getElementById('website').value = "https://" + document.getElementById('website').value;
+      search();
+    }
+  }
   if (button.getElementsByTagName("span")[0].style.display !== "none") {
     document.getElementById("result").style.maxHeight = '0';
     document.getElementsByClassName("error")[0].style.display = "none";;
