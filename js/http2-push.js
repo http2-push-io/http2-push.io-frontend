@@ -49,12 +49,17 @@ function search() {
 
 
               pushes.forEach(function(entry) {
+                  var status = "✓"
+                  if(entry.step == 0) {
+                      status = "✗"
+                  } else if (entry.step == 1) {
+                      status = "?"
+                  }
                   content.innerHTML += ' 						<div class="table-row table-gen">\
                   							<div class="table-data">' + entry.url + '</div>\
                   							<div class="table-data">' + entry.etag + '</div>\
-                  							<div class="table-data">' + entry.step + '</div>\
+                  							<div class="table-data">' + status + '</div>\
                   						</div>'
-                console.log(entry.etag);
               });
 
               document.getElementById("result").style.maxHeight = '400px';
