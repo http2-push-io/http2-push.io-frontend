@@ -54,6 +54,7 @@ function search() {
                   							<div class="table-data">' + entry.etag + '</div>\
                   							<div class="table-data">' + entry.step + '</div>\
                   						</div>'
+                console.log(entry.etag);
               });
 
               document.getElementById("result").style.maxHeight = '400px';
