@@ -177,7 +177,7 @@ p {
 .site-index .form .error p{
     color: white;
     padding: 7px 0 7px 50px;
-    margin: 0;
+    margin: 10px;
     text-align: left;
     background: url(../img/error.svg) no-repeat;
     font-size: 19px;
