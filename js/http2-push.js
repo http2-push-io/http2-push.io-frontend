@@ -11,7 +11,6 @@ function search() {
       document.getElementById('website').value = "https://http2-push.io/";
       search();
     } else {
-      console.log("werks");
       document.getElementById('website').value = "https://" + document.getElementById('website').value;
       search();
     }
@@ -35,29 +34,26 @@ function search() {
               button.getElementsByTagName("span")[0].style.display = "inline";
               button.getElementsByTagName("div")[0].style.display = "none";
             } else {
-              document.getElementById("result").innerHTML = '<table></table>';
-              var table = document.getElementsByTagName("table")[0];
+              document.getElementById("result").innerHTML = '<div class="table table-gen">\
+              					<div class="table-head table-gen">\
+              						<div class="table-row table-gen">\
+              							<div class="table-data">Path</div>\
+              							<div class="table-data">Hash</div>\
+              							<div class="table-data">Status</div>\
+              						</div>\
+              					</div>\
+              					<div class="table-body table-gen">\
+                                </div>\
+                            </div>';
+              var content = document.getElementsByClassName("table-body")[0];
 
-              var header = table.createTHead();
-              var hRow = header.insertRow(0);
-              var hCell1 = hRow.insertCell(0);
-              var hCell2 = hRow.insertCell(1);
-              var hCell3 = hRow.insertCell(2);
-              hCell1.innerHTML = "Path";
-              hCell2.innerHTML = "Hash";
-              hCell3.innerHTML = "Status";
-              var body = table.createTBody();
 
               pushes.forEach(function(entry) {
-                  var row = body.insertRow();
-
-                  var cell1 = row.insertCell(0);
-                  var cell2 = row.insertCell(1);
-                  var cell3 = row.insertCell(2);
-
-                  cell1.innerHTML = entry.url;
-                  cell2.innerHTML = entry.etag;
-                  cell3.innerHTML = entry.step;
+                  content.innerHTML += ' 						<div class="table-row table-gen">\
+                  							<div class="table-data">/css/style.css</div>\
+                  							<div class="table-data">57c720f9-d98</div>\
+                  							<div class="table-data">2</div>\
+                  						</div>'
               });
 
               document.getElementById("result").style.maxHeight = '400px';

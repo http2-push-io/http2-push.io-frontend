@@ -180,7 +180,6 @@ p {
     font-size: 19px;
 }
 .site-index #result {
-    overflow-y: scroll;
     text-align: left;
     width: 520px;
     color: white;
@@ -192,6 +191,49 @@ p {
     /* Safari */
     transition: all 1s;
 }
+
+.site-index #result .table-gen {
+    display: flex;
+}
+
+.site-index #result .table {
+    background-color: #8eaebd;
+    flex-direction: column;
+}
+.site-index #result .table .table-head {
+    flex-direction: column;
+}
+.site-index #result .table .table-head .table-row{
+    border-bottom: 2px solid #CF6766;
+    font-weight: 400;
+}
+.site-index #result .table .table-body .table-row{
+    border-bottom: 1px solid #CF6766;
+}
+.site-index #result .table .table-body {
+    color: #f1f1f1;
+    flex-direction: column;
+}
+.site-index #result .table .table-row {
+    height: 25px;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
+    align-items: center;
+}
+.site-index #result .table .table-row .table-data:first-child{
+    flex-grow: 1;
+}
+.site-index #result .table .table-row .table-data:nth-child(2){
+    min-width: 125px;
+}
+.site-index #result .table .table-row .table-data:last-child{
+    min-width: 75px;
+    text-align: right;
+}
+
+
 .site-index #result table {
     width: 100%;
     background-color: #8eaebd;
@@ -200,7 +242,7 @@ p {
     table-layout: fixed;
 }
 .site-index #result table thead{
-    
+
 }
 .site-index #result table thead tr {
     border-bottom: 2px solid #CF6766;
