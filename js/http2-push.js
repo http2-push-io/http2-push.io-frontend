@@ -4,7 +4,7 @@ function search() {
     if (document.getElementById('website').value.substr(0, 7) === "http://") {
       var errorDiv = document.getElementsByClassName("error")[0];
       errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: URL is not using the HTTPS protocol";
-      errorDiv.style.display = "block";
+      errorDiv.style.maxHeight = "100px";
       button.getElementsByTagName("span")[0].style.display = "inline";
       button.getElementsByTagName("div")[0].style.display = "none";
     } else if (document.getElementById('website').value == "") {
