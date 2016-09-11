@@ -17,7 +17,7 @@ function search() {
   } else {
     if (button.getElementsByTagName("span")[0].style.display !== "none") {
       document.getElementById("result").style.maxHeight = '0';
-      document.getElementsByClassName("error")[0].style.display = "none";;
+      document.getElementsByClassName("error")[0].style.maxHeight = "0";
       var start = new Date().getTime();
       var xhttp = new XMLHttpRequest();
       button.getElementsByTagName("span")[0].style.display = "none";
@@ -30,7 +30,7 @@ function search() {
             if(pushes.error != null) {
               var errorDiv = document.getElementsByClassName("error")[0];
               errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: " + pushes.error;
-              errorDiv.style.display = "block";
+              errorDiv.style.maxHeight = "100px";
               button.getElementsByTagName("span")[0].style.display = "inline";
               button.getElementsByTagName("div")[0].style.display = "none";
             } else {
