@@ -50,9 +50,9 @@ function search() {
 
               pushes.forEach(function(entry) {
                   content.innerHTML += ' 						<div class="table-row table-gen">\
-                  							<div class="table-data">/css/style.css</div>\
-                  							<div class="table-data">57c720f9-d98</div>\
-                  							<div class="table-data">2</div>\
+                  							<div class="table-data">' + entry.url + '</div>\
+                  							<div class="table-data">' + entry.etag + '</div>\
+                  							<div class="table-data">' + entry.step + '</div>\
                   						</div>'
               });
 
