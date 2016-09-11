@@ -168,7 +168,6 @@ p {
     -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
 }
 .site-index .form .error {
-    padding: 10px;
     background: #D66F62;
     overflow: hidden;
     -webkit-transition: all 1s;
