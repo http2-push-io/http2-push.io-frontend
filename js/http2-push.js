@@ -23,24 +23,26 @@ function search() {
       button.getElementsByTagName("span")[0].style.display = "none";
       button.getElementsByTagName("div")[0].style.display = "inline-block";
       xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
+        if (true) {
           setTimeout(function() {
+            var errorDiv = document.getElementsByClassName("error")[0];
+            if(xhttp.status == 500) {
+              errorDiv.getElementsByTagName("p")[0].innerHTML = "Error";
+              errorDiv.style.maxHeight = "100px";
+              button.getElementsByTagName("span")[0].style.display = "inline";
+              button.getElementsByTagName("div")[0].style.display = "none";
+              return;
+            }
             var pushes = JSON.parse(xhttp.responseText);
-
-            if(pushes.error != null) {
-              var errorDiv = document.getElementsByClassName("error")[0];
-              errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: " + pushes.error;
+            if(pushes.length == 0) {
+              errorDiv.getElementsByTagName("p")[0].innerHTML = "Error: No pushes found";
               errorDiv.style.maxHeight = "100px";
               button.getElementsByTagName("span")[0].style.display = "inline";
               button.getElementsByTagName("div")[0].style.display = "none";
             } else {
               document.getElementById("result").innerHTML = '<div class="table table-gen">\
               					<div class="table-head table-gen">\
-              						<div class="table-row table-gen">\
-              							<div class="table-data">Path</div>\
-              							<div class="table-data">Hash</div>\
-              							<div class="table-data">Status</div>\
-              						</div>\
+              						<div class="table-data">I found these pushed paths:</div>\
               					</div>\
               					<div class="table-body table-gen">\
                                 </div>\
@@ -49,16 +51,8 @@ function search() {
 
 
               pushes.forEach(function(entry) {
-                  var status = "✓"
-                  if(entry.step == 0) {
-                      status = "✗"
-                  } else if (entry.step == 1) {
-                      status = "?"
-                  }
                   content.innerHTML += ' 						<div class="table-row table-gen">\
-                  							<div class="table-data">' + entry.url + '</div>\
-                  							<div class="table-data">' + entry.etag + '</div>\
-                  							<div class="table-data">' + status + '</div>\
+                  							<div class="table-data">' + entry + '</div>\
                   						</div>'
               });
 
@@ -70,7 +64,7 @@ function search() {
           }, 1000 - (new Date().getTime() - start));
         }
       }
-      xhttp.open("GET", "https://api.http2-push.io/?url=" + document.getElementById('website').value, true);
+      xhttp.open("GET", "https://cors-anywhere.herokuapp.com/https://http2-push-api.appspot.com/?url=" + document.getElementById('website').value, true);
       xhttp.send();
     }
   }

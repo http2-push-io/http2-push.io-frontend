@@ -12,19 +12,17 @@ body {
     background: #30415d;
     right: 0;
     left: 0;
-    height: 55px;
+    height: 75px;
 }
 .menu .links {
-    text-align: right;
-    display: inline;
-    float: right;
-    padding: 20px 10px 0 0;
+    padding: 30px 10px 30px 0;
+    text-align: center;
 }
 .menu a {
     color: white;
     padding: 0 20px 0 0;
-    text-decoration: none;
-    font-size: 16px;
+    text-decoration: underline;
+    font-size: 20px;
     font-weight: 300;
     text-align: right;
 }
@@ -70,6 +68,7 @@ p {
     justify-content: center;
     height: 100vh;
     flex-direction: column;
+    white-space: none;
 }
 .site-index .wrapper .text,
 .site-index .wrapper .form,
@@ -97,7 +96,7 @@ p {
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    margin-top: 1px;
+    float: right;
 }
 .spinner {
   width: 80px;
@@ -184,10 +183,10 @@ p {
 }
 .site-index #result {
     text-align: left;
-    width: 520px;
+    width: 516px;
     color: white;
     z-index: 500;
-    background-color: #8eaebd;
+    background-color: #30415d;
     overflow-y: scroll;
     margin-top: -2px;
     max-height: 0;
@@ -197,44 +196,22 @@ p {
 }
 
 .site-index #result .table-gen {
-    display: flex;
+    display: block;
 }
 
-.site-index #result .table {
-    background-color: #8eaebd;
-    flex-direction: column;
+.table-data{
+    display: block;
+    width: 100%;
 }
-.site-index #result .table .table-head {
-    flex-direction: column;
+.table{
+    padding: 10px;
 }
-.site-index #result .table .table-head .table-row{
-    border-bottom: 2px solid #CF6766;
-    font-weight: 400;
+.table .table-head{
+    font-weight: 500;
+    padding: 10px 0 10px 0;
 }
-.site-index #result .table .table-body .table-row{
-    border-bottom: 1px solid #CF6766;
-}
-.site-index #result .table .table-body {
-    color: #f1f1f1;
-    flex-direction: column;
-}
-.site-index #result .table .table-row {
-    height: 25px;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 5px;
-    padding-right: 5px;
-    align-items: center;
-}
-.site-index #result .table .table-row .table-data:first-child{
-    flex-grow: 1;
-}
-.site-index #result .table .table-row .table-data:nth-child(2){
-    min-width: 125px;
-}
-.site-index #result .table .table-row .table-data:last-child{
-    min-width: 75px;
-    text-align: right;
+.table .table-row{
+    padding: 4px 0 4px 0;
 }
 .site-index footer {
     position: absolute;
@@ -315,14 +292,18 @@ p {
         text-align: center;
     }
     .site-index .form input[type=text] {
-        width: 70%;
+        width: 100%;
     }
     .site-index .form .button {
-        width: 22%;
+        width: 200px;
+        display: block;
+        float: none;
+        margin: 0 auto;
+        margin-top: 20px;
     }
     .site-index #result {
+        margin-top: 20px;
         width: 100%;
-        max-height: 300px;
     }
 }
 @media (max-width: 350px) {
