@@ -66,7 +66,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 95vh;
     flex-direction: column;
     white-space: none;
 }
@@ -213,26 +213,32 @@ p {
 .table .table-row{
     padding: 4px 0 4px 0;
 }
-.site-index footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+footer {
     text-align: center;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
 }
-.site-index footer p {
-    font-size: 15px;
+footer p{
+    text-align: center !important;
+    left: -50%;
+    position: relative;
+}
+footer p {
+    font-size: 15px !important;
     color: lightgray;
 }
-.site-index footer p a {
-    color: lightgray;
+footer p a {
+    color: lightgray !important;
 }
 
 .site-faq .wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 200px;
     flex-direction: column;
+    margin-top: 200px;
 }
 .site-faq .content a {
     color: white;
@@ -240,8 +246,8 @@ p {
     margin-top: 50px;
 }
 .site-faq .faq {
-    background-color: white;
-    color: #CF6766;
+    background-color: #CF6766;
+    color: white;
     padding: 20px;
 }
 .site-faq .faq-wrap {
@@ -261,23 +267,18 @@ p {
 .site-faq .faq h3 {
     font-weight: 300;
     font-size: 30px;
-    color: #031424;
     padding: 20px 0 0px 0;
     margin: 0;
 }
 .site-faq .faq p {
-    color: #031424 !important;
-    color: #CF6766;
     text-align: left;
     font-size: 19px;
 }
 .site-faq footer p {
-    text-align: center !important;
-    font-size: 16px !important;
     padding-top: 20px;
 }
-.site-faq .faq-wrap a{
-    color: black;
+.site-faq a:link, .site-faq a:visited{
+    color: white;
 }
 @media (max-width: 600px) {
     .menu .links{
